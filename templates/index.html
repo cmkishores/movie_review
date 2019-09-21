@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %} Home {% endblock title %}
+
+
+{% block content %}
+	{% if user.is_authenticated %}
+  		<h1 class="text-center">Hi {{ user.username }}! </h1>
+ 		 
+ 		 <a href="{% url 'logout' %}" class="btn btn-outline-danger btn-lg btn-block" role="button">Log Out </a>
+ 		
+ 		 <a href="{% url 'notes' %}"> Movie Reviews </a>
+
+ 		 <a class="btn btn-danger ml-2 "href="{% url 'password_reset' %}" >Reset Password</a>
+ 		 <a class="btn btn-warning ml-2 "href="{% url 'password_change' %}" >Change Password</a>
+ 		
+
+	{% else %}
+  		<div class="alert alert-danger" role="alert">
+  				You are not Logged In !!
+  				<a href="{% url 'login' %}" >Log In</a>
+		</div>
+		<div class="alert alert-warning" role="alert">
+  				Not an existing user ?<a href="{% url 'signup' %}" >Sign Up !</a>
+		</div>
+  		 
+
+	{% endif %}
+
+
+{% endblock content %}
