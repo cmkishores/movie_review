@@ -9,6 +9,7 @@
 <div class="card" style="width: 1000px" >
   <div class="card-body">
    <h1>{{ reviews.movie_name }}</h1>
+   <p>{{ element.timestamp|timesince }}</p>
    <h2>{{ reviews.created_at }}</h2>
    <h3>{{ reviews.rating }}
 	<p> {{ reviews.review }} </p>

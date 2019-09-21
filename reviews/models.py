@@ -16,7 +16,7 @@ class Reviews(models.Model):
 	author = models.CharField(max_length=20)
 	created_at = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
     last_modified = models.DateTimeField(auto_now=True, editable=False, null=False, blank=False)
-
+    rating = models.CharField(max_length=1,choices=RATING)
 	def __str__(self):
 		return self.movie_name
 

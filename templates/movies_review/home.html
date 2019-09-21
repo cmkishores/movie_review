@@ -13,7 +13,13 @@
 	{% for element in reviewlist %}
 	<div class="card" style="width: 500px" >
   <div class="card-body">
-  	<a class = "card-link" href="{% url 'detailed' element.id %}"><li> {{ element.movie_name }} </li></a>
+  	<a class = "card-link" href="{% url 'detailed' element.id %}">
+
+  		<li> {{ element.movie_name }} ({{ element.release_year }}) </li>
+  		<li> {{element.rating}}   {{ element.timestamp|timesince }} </li>
+
+
+  	</a>
  	</div>
  </div>
 	{% endfor %}
