@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}Movies{% endblock title %}
+
+
+
+{% block body %}
+<h1>Movies List</h1>
+<ul>
+	{% for element in reviewlist %}
+	<div class="card" style="width: 500px" >
+  <div class="card-body">
+  	<a class = "card-link" href="{% url 'detailed' element.id %}"><li> {{ element.movie_name }} </li></a>
+ 	</div>
+ </div>
+	{% endfor %}
+	</ul>
+	{% if {{request.user.is_authenticated}} %}
+	<div class="card" style="width: 500px" >
+  <div class="card-body">
+  	<a class = "card-link" href="{% url 'addnotes' %}">Add a Note!</a>
+ 	</div>
+ </div>
+ 	{% endif %}
+
+
+{% endblock body %}

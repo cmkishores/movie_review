@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ reviews.movie_name }}
+{% endblock title %}
+
+{% block body %}
+
+<div class="card" style="width: 1000px" >
+  <div class="card-body">
+   <h1>{{ reviews.movie_name }}</h1>
+   <h2>{{ reviews.created_at }}</h2>
+   <h3>{{ reviews.rating }}
+	<p> {{ reviews.review }} </p>
+	
+	{% if {{request.user.is_authenticated}} %}
+	{% if {{request.user.username}} == {{reviews.username}}%}
+	<a href="{% url 'editnotes' note.id %}" class="card-link">Edit Review</a>
+	<a href="{% url 'deletenotes' note.id %}" class="card-link">Delete Review</a>
+  </div>
+  	
+</div>
+	{% endif %}
+	{% endif %}
+<a href="{% url 'notes' %}" class="card-link">Go back</a>
+
+{% endblock body %}

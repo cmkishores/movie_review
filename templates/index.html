@@ -4,7 +4,7 @@
 {% block title %} Home {% endblock title %}
 
 
-{% block content %}
+{% block body %}
 	{% if user.is_authenticated %}
   		<h1 class="text-center">Hi {{ user.username }}! </h1>
  		 
@@ -32,4 +32,4 @@
 	{% endif %}
 
 
-{% endblock content %}
+{% endblock body %}

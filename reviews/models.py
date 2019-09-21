@@ -2,6 +2,14 @@ from django.db import models
 from django.urls import reverse
 
 class Reviews(models.Model):
+	RATING = [
+	('1','*'),
+	('2','**'),
+	('3','***'),
+	('4','****'),
+	('5','*****'),
+				]
+
 	movie_name = models.CharField(max_length=50)
 	release_year = models.CharField(max_length=4)
 	review = models.TextField()

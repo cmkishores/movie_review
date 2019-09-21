@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title  %} Delete the review?? {% endblock title  %} 
+
+{% block body %} 
+	{% if {{request.user.is_authenticated}} %}
+	{% if {{request.user.username}} == {{reviews.username}}%}
+	<form action="" method="post"> {% csrf_token %}
+	
+	<p> Do you want to delete <strong>{{ reviews.movie_name }}</strong> ?</p>
+	<input class="btn btn-danger ml-2" type="submit" value="Confirm"/>
+	
+	</form>
+	<a class="btn btn-warning ml-2" href="{% url 'updatereview' review.id %}">Edit insted?</a>
+
+	{% else %}
+  		<div class="alert alert-danger" role="alert">
+  				You are not Logged In !!
+  				<a href="{% url 'login' %}" >Log In</a>
+		</div>
+		<div class="alert alert-warning" role="alert">
+  				Not an existing user ?<a href="{% url 'signup' %}" >Sign Up !</a>
+		</div>
+  		 
+
+	{% endif %}
+	{% endif %}
+
+
+
+
+
+
+{% endblock body %}
