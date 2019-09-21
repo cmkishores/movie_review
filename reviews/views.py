@@ -1,3 +1,20 @@
 from django.shortcuts import render
+from django.views.generic import ListView,DetailView
+from django.generic.views.edit import CreateView,DeleteView
+from django.urls import reverse_lazy
 
-# Create your views here.
+from .models import Reviews
+
+class ReviewsListView(ListView):
+	model = Reviews
+	template_name = 'home.html'
+	context_object_name = 'reviewlist'
+
+class ReviewsDetailView(DetailView):
+	model = Reviews
+	template_name = 'review.html'
+
+class AddReviewView(CreateView):
+	model = Reviews
+	template_name = 'addreview.html'
+	fields = ['movie_name','release_year','review','author']
