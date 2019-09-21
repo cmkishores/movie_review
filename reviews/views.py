@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView
-from django.generic.views.edit import CreateView,DeleteView,UpdateView
+from django.views.generic.edit import CreateView,DeleteView,UpdateView
 
 from django.urls import reverse_lazy
 
@@ -18,7 +18,7 @@ class ReviewsDetailView(DetailView):
 class AddReviewView(CreateView):
 	model = Reviews
 	template_name = 'addreview.html'
-	fields = ['movie_name','release_year','review','author']
+	fields = ['movie_name','release_year','review','author','rating']
 
 class EditReviewView(UpdateView):
 	model = Reviews
@@ -29,4 +29,3 @@ class DeleteReviewView(DeleteView):
 	model = Reviews
 	template_name = 'deletereview.html'
 	success_url = reverse_lazy('home')
-	

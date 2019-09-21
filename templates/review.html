@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{ reviews.movie_name }}
+{% endblock title %}
+
+{% block body %}
+
+<div class="card" style="width: 1000px" >
+  <div class="card-body">
+   <h1>{{ reviews.movie_name }} </h1>
+   <p class="text-muted">{{ reviews.created_at }} <small class="text-muted ">  Added {{ reviews.created_at|timesince }} ago </small> </h2>
+   <h3 class= "text-muted">Rating : {% for element in reviews.rating %} * {% endfor %} out of 5</h3>
+	<p > {{ reviews.review }} </p>
+	
+		
+	<a href="{% url 'editreview' reviews.id %}" class="card-link">Edit Review</a>
+	<a href="{% url 'deletereview' reviews.id %}" class="card-link">Delete Review</a>
+  </div>
+  	
+</div>
+	
+<a href="{% url 'home' %}" class="card-link">Go back</a>
+
+{% endblock body %}

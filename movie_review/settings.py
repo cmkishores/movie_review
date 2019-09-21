@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     #local_apps
 
-    'users.apps.UserConfig',
+    'users.apps.UsersConfig',
     'reviews.apps.ReviewsConfig',
 ]
 
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -126,14 +126,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-AUTH_USER_MODEL = 'users.CustomUser'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

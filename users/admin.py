@@ -1,15 +1,28 @@
 from django.contrib import admin
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-from django.contrib.auth.models import AbstractUser
+from .models import CustomUser
 from django.contrib.auth.admin import UserAdmin
 
 
 class CustomUserAdmin(UserAdmin):
+	model = CustomUser
 	add_form = CustomUserCreationForm
 	form = CustomUserChangeForm
-	model = AbstractUser
+	list_display = ['email','username', 'age',]
+	fieldsets = (
 
+		(None,{'fields':('email','password','username','age',)}),
+		('Permissions',{'fields':('is_staff','is_active')}),
+		)
 
-admin.site.register(AbstractUser, CustomUserAdmin)
+	add_fieldsets = (
+
+		(None,{
+			'classes':('wide',),
+			'fields':('email','username','password1','password2','is_staff','is_active')
+			}),
+
+		)
+admin.site.register(CustomUser,CustomUserAdmin)
 
 # Register your models here.

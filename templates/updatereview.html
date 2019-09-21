@@ -5,6 +5,8 @@
 {% block title %} Edit Post {% endblock title %}
 
 {% block body %}
+	{% if request.user.is_authenticated %}
+	{% if request.user.username == reviews.username%}
 
 <div class="card" style="width: 500px" >
   <div class="card-body">
@@ -17,4 +19,6 @@
 </form>
 </div>
 </div>
+{% endif %}
+{% endif %}
 {% endblock body %}
