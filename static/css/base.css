@@ -1,8 +1,7 @@
 body {
 
 	font-family: 'Barlow';
-	   
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(151,10,130,1) 0%, rgba(33,33,33,1) 100.2% );
+	background: linear-gradient(to top, #BF360C, #FFA726);
 	height: 100%;
     margin: 0;
     background-repeat: no-repeat;
@@ -17,6 +16,6 @@ html {
     height: 100%;
 }
 .navbar-default {
-    color: ##D84315;
-    background-color: ##D84315;
+    color: #D84315;
+    background-color: #D84315;
 }
