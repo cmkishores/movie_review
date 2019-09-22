@@ -6,26 +6,26 @@
 
 {% block body %}
 	{% if user.is_authenticated %}
-  		<h1 class="text-center">Hi {{ user.username }}! </h1>
+  		<h1 class="md-5 mt-5 text-center">Hi {{ user.username }}! </h1>
  		 
  		 
  		
  		 
- 		 <a href="{% url 'home' %}" class="btn btn-outline-primary btn-lg btn-block" role="button">Movie Reviews</a>
+ 		 <a href="{% url 'home' %}" class="btn btn-outline-primary btn-lg btn-block mt-5" role="button">Movie Reviews</a>
 
- 		 <a class="btn btn-danger ml-2 " href="{% url 'logout' %}"> Log out </a>
+ 		 <a class="btn btn-danger col-ml-5 mr-5 md-4 mt-5" href="{% url 'logout' %}"> Log out </a>
 
- 		 <a class="btn btn-warning ml-2 " href="{% url 'password_reset' %}" >Reset Password</a>
- 		 <a class="btn btn-secondary ml-2 "href="{% url 'password_change' %}" >Change Password</a>
+ 		 <a class="btn btn-warning col-ml-5 md-4 mt-5" href="{% url 'password_reset' %}" >Reset Password</a>
+ 		 <a class="btn btn-secondary col-ml-5 md-4 mt-5"href="{% url 'password_change' %}" >Change Password</a>
  		
 
 	{% else %}
-  		<div class="alert alert-danger" role="alert">
+  		<div class="alert alert-danger col-md-4" role="alert">
   				You are not Logged In !!
-  				<a href="{% url 'login' %}" >Log In</a>
+  				<a href="{% url 'login' %}" class="md-5">Log In</a>
 		</div>
-		<div class="alert alert-warning" role="alert">
-  				Not an existing user ?<a href="{% url 'signup' %}" >Sign Up !</a>
+		<div class="alert alert-warning mt-2" role="alert">
+  			Not an existing user ?<a href="{% url 'signup' %}" >Sign Up !</a>
 		</div>
   		 
 

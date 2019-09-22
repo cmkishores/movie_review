@@ -9,23 +9,33 @@
 
 {% block body %}
 <h1>Movies List</h1>
-<ul>
-	{% for element in reviewlist %}
-	<div class="card" style="width: 500px" >
-  <div class="card-body">
-  	<a class = "card-link" href="{% url 'review' element.id %}">
+  <div class="container">
+    <ul class="list-inline" > 
+	
 
-  		<li> <h2> {{ element.movie_name }} ( {{ element.release_year }} ) </h2>
-        <h5 class="text-muted" >   Added {{ element.created_at|timesince }} Ago</h5>
-        <h3> Rating : {{ reviews.rating }}  out of 5</h3>  </li>
-    </a>
- 	</div>
- </div>
-	{% endfor %}
+          {% for element in reviewlist %}
+            <a class = "card-link " href="{% url 'review' element.id %}">
+                <div class="card" style="box-sizing:400px" >
+                <div class="card-body">
+                  <li class="list-inline-item"> 
+                    <h2> <i class="material-icons">theaters</i> {{ element.movie_name }} ( {{ element.release_year }} ) </h2>
+                    <h5 class="text-muted" > Added {{ element.created_at|timesince }} Ago</h5>
+                    <h3> Rating : {% for element in element.rating %} <i class="material-icons">star</i> {% endfor %} out of 5</h3>
+                  </li>
+                </div>
+                </div> 
+            </a>
+  
+            {% endfor %}
   	</ul>
-	{% if request.user.is_authenticated %}
-		<button class = "btn-primary" href="{% url 'addreview' %}">Add a Review!</button>
- 	{% endif %}
+  </div>
+        {% if request.user.is_authenticated %}
+        <div class="col-md-4 mt-5 text-center"> 
+          <a class = "btn btn-outline-primary " href="{% url 'addreview' %}">Add a Review!</a>
+          {% endif %}
+        </div>
+    
+	
 
 
 {% endblock body %}
