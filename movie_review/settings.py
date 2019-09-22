@@ -41,9 +41,8 @@ INSTALLED_APPS = [
 
     #3rd_party apps
     'crispy_forms',
-    'material',
-    'materialize',
-    'crispy_forms_materialize',
+
+
 
     #local_apps
 
