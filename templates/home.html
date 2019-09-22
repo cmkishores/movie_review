@@ -8,7 +8,7 @@
 
 
 {% block body %}
-<h1 class="text-light">Movies List</h1>
+<h1 class="text-dark">Movies List</h1>
  
     <ul class="list-inline" > 
 	
@@ -18,9 +18,9 @@
                 <div class="card" style="box-sizing:400px" >
                 <div class="card-body">
                   <li class="list-inline-item"> 
-                    <h2 > <i class="material-icons">theaters</i> {{ element.movie_name }} ( {{ element.release_year }} ) </h2>
-                    <h5 class="text-muted" > Added {{ element.created_at|timesince }} Ago</h5>
-                    <h3> Rating : {% for element in element.rating %} <i class="material-icons">star</i> {% endfor %} out of 5</h3>
+                    <h4 > <i class="material-icons">theaters</i> {{ element.movie_name }} ( {{ element.release_year }} ) </h4>
+                    <h6 class="text-muted" > Added {{ element.created_at|timesince }} Ago</h6>
+                    <h5> Rating : {% for element in element.rating %} <i class="material-icons">star</i> {% endfor %} out of 5</h5>
                   </li>
                 </div>
                 </div> 
@@ -31,7 +31,7 @@
   </div>
         {% if request.user.is_authenticated %}
         <div class="col-md-4 mt-5 text-center"> 
-          <a class = "btn btn-outline-dark " href="{% url 'addreview' %}">Add a Review!</a>
+          <a class = "btn btn-outline-dark md-4" href="{% url 'addreview' %}">Add a Review!</a>
           {% endif %}
         </div>
     
