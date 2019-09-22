@@ -23,7 +23,7 @@ class AddReviewView(CreateView):
 class EditReviewView(UpdateView):
 	model = Reviews
 	template_name = 'updatereview.html'
-	fields = ['movie_name', 'release_year', 'review']
+	fields = ['movie_name', 'release_year', 'review','rating']
 
 class DeleteReviewView(DeleteView):
 	model = Reviews
