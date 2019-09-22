@@ -1,4 +1,17 @@
 body {
 
-	font-family: 'Barlow'
+	font-family: 'Barlow';
+	background: linear-gradient(to top, #076585, #fff);
+	height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.card-body h2 {
+	font-color:#D84315;
+}
+html {
+    height: 100%;
 }
