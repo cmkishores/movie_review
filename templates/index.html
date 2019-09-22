@@ -13,11 +13,11 @@
  		 
  		 <a href="{% url 'home' %}" class="btn btn-outline-success btn-lg btn-block mt-5" role="button">Movie Reviews</a>
 
- 		 <a class="btn btn-danger font-weight-bold ml-5 mr-5 md-4 mt-5" href="{% url 'logout' %}"> Log out </a>
-
+ 		 <a class="btn btn-danger font-weight-bold col-ml-5 mr-5 md-4 mt-5" href="{% url 'logout' %}"> Log out </a>
+ 		 <p>
  		 <a class="btn btn-outline-danger font-weight-bold col-ml-5 md-4 mt-5" href="{% url 'password_reset' %}" >Reset Password</a>
  		 <a class="btn btn-outline-danger font-weight-bold col-ml-5 md-4 mt-5"href="{% url 'password_change' %}" >Change Password</a>
- 		
+ 		</p>
 
 	{% else %}
   		<div class="alert alert-danger col-md-4" role="alert">
