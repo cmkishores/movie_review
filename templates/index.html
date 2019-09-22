@@ -6,17 +6,17 @@
 
 {% block body %}
 	{% if user.is_authenticated %}
-  		<h1 class="md-5 mt-5 text-center">Hi {{ user.username }}! </h1>
+  		<h1 class="md-5 mt-5 text-center text-light">Hi {{ user.username }}! </h1>
  		 
  		 
  		
  		 
- 		 <a href="{% url 'home' %}" class="btn btn-outline-primary btn-lg btn-block mt-5" role="button">Movie Reviews</a>
+ 		 <a href="{% url 'home' %}" class="btn btn-outline-light btn-lg btn-block mt-5" role="button">Movie Reviews</a>
 
- 		 <a class="btn btn-danger col-ml-5 mr-5 md-4 mt-5" href="{% url 'logout' %}"> Log out </a>
+ 		 <a class="btn btn-danger font-weight-bold col-ml-5 mr-5 md-4 mt-5" href="{% url 'logout' %}"> Log out </a>
 
- 		 <a class="btn btn-warning col-ml-5 md-4 mt-5" href="{% url 'password_reset' %}" >Reset Password</a>
- 		 <a class="btn btn-secondary col-ml-5 md-4 mt-5"href="{% url 'password_change' %}" >Change Password</a>
+ 		 <a class="btn btn-outline-light font-weight-bold col-ml-5 md-4 mt-5" href="{% url 'password_reset' %}" >Reset Password</a>
+ 		 <a class="btn btn-outline-light font-weight-bold col-ml-5 md-4 mt-5"href="{% url 'password_change' %}" >Change Password</a>
  		
 
 	{% else %}

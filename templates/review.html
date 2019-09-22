@@ -10,19 +10,19 @@
   <div class="card-body">
    <h1>{{ reviews.movie_name }} </h1>
    <p class="text-muted">{{ reviews.created_at }} <small class="text-muted ">  Added {{ reviews.created_at|timesince }} ago </small> </p>
-   <h3 class= "text-muted">Rating : {% for element in reviews.rating %} <i class="material-icons">star</i> {% endfor %} out of 5</h3>
+   <h3 class= "text-muted">Rating : {% for element in reviews.rating %} <i class="material-icons ">star</i> {% endfor %} out of 5</h3>
 	<p > {{ reviews.review }} </p>
 	<p class= "text-muted"> By - {{ reviews.author }} Being read by {{ request.user.username }} </p>
 	
 	{% if request.user.is_authenticated %}
-	{% if request.user.username == reviews.username%}
+	
 	<a href="{% url 'editreview' reviews.id %}" class="card-link">Edit Review</a>
 	<a href="{% url 'deletereview' reviews.id %}" class="card-link">Delete Review</a>
   </div>
  	{% endif %}
- 	{% endif %}
+ 	<a href="{% url 'home' %}" class="btn btn-dark" role="button">Go back</a>
 </div>
 	
-<a href="{% url 'home' %}" class="card-link">Go back</a>
+
 
 {% endblock body %}
