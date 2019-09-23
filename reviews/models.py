@@ -3,6 +3,9 @@ from django.urls import reverse
 from django.contrib.auth import get_user_model
 
 class Reviews(models.Model):
+	class Meta:
+		verbose_name = "Review"
+		
 	RATING = [
 	('*','1'),
 	('**','2'),

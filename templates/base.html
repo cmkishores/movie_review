@@ -18,18 +18,35 @@
 <body>
 	
 <nav class="navbar navbar-default navbar-expand-md navbar-light bg-light mb-4">
-      <a class="navbar-brand" href="{% url 'home' %}"> MovieRat </a>
-       <a class="nav-link " href="{% url 'index' %}"><i class="material-icons text-dark">home</i> <span class="sr-only">(current)</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+	<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active mr-3">
+		<a class="text-dark font-weight-bold " href="{% url 'logout' %}"> Log out</a>
+	</li>
+      <li class="nav-item mt-2 mt-lg-0">
+     <a class="text-dark font-weight-bold ml-1 mr-3" href="{% url 'password_reset' %}" > Reset Password</a></li>
+       <li class="nav-item mt-2 mt-lg-0 mr-3"> <a class="text-dark font-weight-bold ml-1"href="{% url 'password_change' %}" > Change Password</a></li></ul>
+    </div>
+    <div class="mx-auto order-0">
+         <a class="navbar-brand mx-auto" href="{% url 'home' %}"> MovieRat </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+     
+       
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         {% if user.is_authenticated %}
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle ml-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           {{user.username}}
         </a>
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'login' %}">Login</a>
           
@@ -37,6 +54,7 @@
             </li>
         </li>
           </ul>
+      </div>
         {% else %}
           <form class="form-inline ml-auto">
             <a href="{% url 'login' %}" class="btn btn-outline-secondary">
@@ -45,7 +63,8 @@
             Sign up</a>
           </form>
         {% endif %}
-      </div>
+      
+  </div>
     </nav>
 
     <div class = "container " >
