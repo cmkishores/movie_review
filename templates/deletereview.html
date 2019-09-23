@@ -6,12 +6,12 @@
 {% block body %} 
 	{% if request.user.is_authenticated %}
 	
-	<form action="" method="post"> {% csrf_token %}
+	<form action="" method="post" class="text-lignt"> {% csrf_token %}
 	
-	<p> Do you want to delete <strong>{{ reviews.movie_name }}</strong> ?</p>
+	<p class="text-light font-weight-bold"> Do you want to delete <strong>{{ reviews.movie_name }}</strong> ?</p>
 	<input class="btn btn-danger col-ml-2" type="submit" value="Confirm"/>
 	</form>
-	<a class="btn btn-warning col-ml-5 mt-5" href="{% url 'editreview' reviews.id %}">Edit insted?</a>
+	<a class="btn btn-warning text-dark font-weight-bold col-ml-5 mt-5" href="{% url 'editreview' reviews.id %}">Edit insted?</a>
 	
 
 	{% else %}

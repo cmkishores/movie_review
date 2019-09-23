@@ -1,5 +1,4 @@
 body {
-    padding:200px;
 	
     font-family: 'Barlow';
 	background: linear-gradient(to top, #BF360C, #FFA726);
@@ -14,7 +13,7 @@ body {
 	font-color:#D84315;
 }
 html {
-    
+
     height: 100%;
 }
 .navbar-default {
