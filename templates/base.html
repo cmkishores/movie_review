@@ -4,6 +4,8 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -15,9 +17,9 @@
 </head>
 <body>
 	
-<nav class="navbar navbar-default navbar-expand-md navbar-dark bg-dark mb-4">
+<nav class="navbar navbar-default navbar-expand-md navbar-light bg-light mb-4">
       <a class="navbar-brand" href="{% url 'home' %}"> MovieRat </a>
-       <a class="nav-link " href="{% url 'index' %}"><i class="material-icons md-light">home</i> <span class="sr-only">(current)</span></a>
+       <a class="nav-link " href="{% url 'index' %}"><i class="material-icons text-dark">home</i> <span class="sr-only">(current)</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">

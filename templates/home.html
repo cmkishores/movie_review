@@ -8,7 +8,7 @@
 
 
 {% block body %}
-<h1 class="text-dark">Movies List</h1>
+<h1 class="text-light">Movies List</h1>
  
     <ul class="list-inline" > 
 	
@@ -30,7 +30,7 @@
   	</ul>
      {% if request.user.is_authenticated %}
          
-          <a class = "btn btn-outline-dark col-md-4" href="{% url 'addreview' %}">Add a Review!</a>
+          <a class = "btn btn-outline-light col-md-4" href="{% url 'addreview' %}">Add a Review!</a>
           {% endif %}
         
   </div>
