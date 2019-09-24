@@ -23,6 +23,7 @@ class Reviews(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
 	last_modified = models.DateTimeField(auto_now=True, editable=False, null=False, blank=False)
 	owner = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+	poster = models.ImageField(upload_to='possters/', blank=True)
 
 	def __str__(self):
 		return self.movie_name
