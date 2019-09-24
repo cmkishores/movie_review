@@ -42,7 +42,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
       </li>
-      
+       
       
      
     </ul>
@@ -60,6 +60,12 @@
     </nav>
 
     <div class = "container " >
+
+    	<form action="{% url 'search' %}" method='get'> 
+    		<input type="text" name="q">
+    		<input type="submit" value="Search" >
+    		
+    	</form>
 
 		{% block body %}
 
