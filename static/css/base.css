@@ -2,22 +2,15 @@ body {
 	
     font-family: 'Barlow';
 	background: linear-gradient(to top, #BF360C, #FFA726);
-	height: 120%;
-    margin: 0;
+	height: 100%;
+    margin-bottom: -100px;
     background-repeat: no-repeat;
     background-attachment:repeat-x;
 
 }
 
 
-html {
 
-    height: 120%;
-  
-}
-.text-muted{
-    color:white;
-}
 .card-img-top
 {
 
