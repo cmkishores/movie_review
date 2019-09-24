@@ -43,3 +43,12 @@ class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	def test_func(self):
 		obj = self.get_object()
 		return obj.owner == self.request.user
+
+
+class SearchReviewView(LoginRequiredMixin,ListView):
+	model = Reviews
+	template_name = 'searchview.html'
+	context_object_name = 'searchreviewlist'
+	queryset = Reviews.objects.filter(movie_name='Lucifer')
+
+

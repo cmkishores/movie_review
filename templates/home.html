@@ -29,7 +29,7 @@
 <h1 class="text-light">Movies List</h1>
  
     <ul class="list-inline" > 
-	
+	<a href="{% url 'search' %}" class="md-5">Search</a>
 
           {% for element in reviewlist reversed %}
             <a class = "card-link text-danger text-danger " href="{% url 'review' element.id %}">

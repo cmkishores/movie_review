@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Search {% endblock title %}
+
+
+{% block body %}<ul class="list-inline" > 
+	
+
+          {% for element in searchreviewlist reversed %}
+            <a class = "card-link text-danger text-danger " href="{% url 'review' element.id %}">
+                <div class="card" style="box-sizing:400px" >
+                <div class="card-body">
+                  <li class="list-inline-item"> 
+                    <h4 > <i class="material-icons">theaters</i> {{ element.movie_name }} ( {{ element.release_year }} ) </h4>
+                    <h6 class="text-muted" > Added {{ element.created_at|timesince }} Ago</h6>
+                    <h5> Rating : {% for element in element.rating %} <i class="material-icons">star</i> {% endfor %} out of 5</h5>
+                  </li>
+                </div>
+                </div> 
+            </a>
+  
+            {% endfor %}
+  	</ul>
+
+  {% endblock body %}
