@@ -54,8 +54,5 @@ class SearchReviewView(LoginRequiredMixin,ListView):
 	# queryset = Reviews.objects.filter(movie_name='Lucifer')
 	def get_queryset(self):
 		query = self.request.GET['q']
-		return Reviews.objects.filter(
-			Q(movie_name__contains=query) |
-			Q(release_year='2019')
-			)
+		return Reviews.objects.filter(movie_name__contains=query)
 
