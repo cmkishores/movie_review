@@ -8,7 +8,11 @@
 
 <div class="card" style="box-sizing:400px" >
   <div class="card-body">
+
    <h1>{{ reviews.movie_name }} </h1>
+
+   <img class="card-img-top" src="{{ reviews.poster.url }}" alt="{{ reviews.movie_name }}">
+
    <p class="text-muted">{{ reviews.created_at }} <small class="text-muted ">  Added {{ reviews.created_at|timesince }} ago </small> </p>
    <h4 class= "text-muted">Rating : {% for element in reviews.rating %} <i class="material-icons ">star</i> {% endfor %} out of 5</h4>
 	<blockquote class="blockquote">

@@ -20,7 +20,7 @@ class ReviewsDetailView(DetailView):
 class AddReviewView(CreateView):
 	model = Reviews
 	template_name = 'addreview.html'
-	fields = ['movie_name','release_year','review','author','rating']
+	fields = ['movie_name','release_year','review','author','rating','poster']
 	
 	def form_valid(self, form):
 		form.instance.owner = self.request.user
@@ -29,7 +29,7 @@ class AddReviewView(CreateView):
 class EditReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Reviews
 	template_name = 'updatereview.html'
-	fields = ['movie_name', 'release_year', 'review','rating']
+	fields = ['movie_name', 'release_year', 'review','rating','poster']
 	
 	def test_func(self):
 		obj = self.get_object()
