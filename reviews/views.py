@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView
 from django.views.generic.edit import CreateView,DeleteView,UpdateView
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin,PermissionRequiredMixin
 from django.db.models.query_utils import Q
 
 from django.urls import reverse_lazy
@@ -14,9 +14,10 @@ class ReviewsListView(LoginRequiredMixin, ListView):
 	context_object_name = 'reviewlist'
 	login_url='login'
 
-class ReviewsDetailView(LoginRequiredMixin,DetailView):
+class ReviewsDetailView(LoginRequiredMixin,PermissionRequiredMixin,DetailView):
 	model = Reviews
 	template_name = 'review.html'
+	permission_required = 'reviews.special_access'
 
 class AddReviewView(LoginRequiredMixin,CreateView):
 	model = Reviews
