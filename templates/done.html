@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %} Payment recieved {% endblock title %}
+
+{% block body %} 
+
+<h1>Thank you for the payment </h1>
+
+<p> Your payment has been recieved and now can enjoy the full browsing experience.</p>
+
+<h5>To continue reading stories, please click <a href="{% url 'home' %}">Here</a></h5>
+
+{% endblock body %}

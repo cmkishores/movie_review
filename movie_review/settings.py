@@ -144,3 +144,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STRIPE_TEST_PUBLIC_KEY = 'pk_test_b9fSSBEKXopOEQrReqN4lc8C00WETyNHjB'
+STRIPE_TEST_SECRET_KEY = 'sk_test_c46oYL6elMuR8hzKifaH1Huf00h8aem7zJ'

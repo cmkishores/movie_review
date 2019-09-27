@@ -31,12 +31,7 @@ class Reviews(models.Model):
 	def __str__(self):
 		return self.movie_name
 
-	def username_req(request):
-		usernameauth = None
-		if request.user.is_authenticated():
-			usernameauth = request.user.username
-			return usernameauth
-
+	
 
 	def get_absolute_url(self):
 		return reverse('review',args=[str(self.id)])

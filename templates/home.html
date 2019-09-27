@@ -16,22 +16,35 @@
     
 
      
+{% endif %}
 
-  {% else %}
-      <div class="alert alert-light col-md-4 " role="alert">
-          You are not Logged In !!
-          <a href="{% url 'login' %}" class="md-5">Log In</a>
-    </div>
-    <div class="alert alert-light col-md-4 mt-2" role="alert">
-        Not an existing user ?<a href="{% url 'signup' %}" >Sign Up !</a>
-    </div>
-    {% endif %}
+<div class="card col mt-5" >
+  <div class="card-body" >
+    <h2> Dont have a membership? Buy with the link below !</h2>
+    <p>
+    <form method="post" action="{% url 'done' %}" >
+{% csrf_token %}
+
+
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ stripe_key }}"
+    data-description="All Books"
+    data-amount="1000"
+    data-locale="auto">
+</script> 
+  
+</form>
+</p>
+</div>
+<p class="text-muted">You need membership to read reviews</p>
+</div>
+
+
 <h1 class="text-light">Movies List</h1>
  
     <ul class="list-inline" > 
-	<a href="{% url 'search' %}" class="md-5">Search</a>
-
-          {% for element in reviewlist reversed %}
+	      {% for element in reviewlist reversed %}
             <a class = "card-link text-danger text-danger " href="{% url 'review' element.id %}">
                 <div class="card" style="box-sizing:400px" >
                 <div class="card-body">
