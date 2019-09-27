@@ -84,7 +84,7 @@ class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 		return obj.owner == self.request.user
 
 
-class SearchReviewView(LoginRequiredMixin,ListView):
+class SearchReviewView(ListView):
 	model = Reviews
 	template_name = 'searchview.html'
 	context_object_name = 'searchreviewlist'
