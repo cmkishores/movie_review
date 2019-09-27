@@ -55,6 +55,14 @@ class ReviewsDetailView(LoginRequiredMixin,PermissionRequiredMixin,DetailView):
 	model = Reviews
 	template_name = 'review.html'
 	permission_required = 'reviews.special_access'
+	def get_permission_denied_message(self):
+		
+		permission_denied_message = "You dont have permission to view the review. Please buy a membership to read reviews."
+		return self.permission_denied_message
+
+	def get_redirect_field_name(self):
+		redirect_field_name = ''
+		return self.redirect_field_name
 
 class AddReviewView(LoginRequiredMixin,CreateView):
 	model = Reviews
@@ -65,6 +73,9 @@ class AddReviewView(LoginRequiredMixin,CreateView):
 		form.instance.owner = self.request.user
 		return super().form_valid(form)
 
+	def my_view(request):
+		if not requst.user.is_authenticated:
+			return redirect('%s' % request.path)
 class EditReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Reviews
 	template_name = 'updatereview.html'
@@ -73,6 +84,9 @@ class EditReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	def test_func(self):
 		obj = self.get_object()
 		return obj.owner == self.request.user
+	def my_view(request):
+		if not requst.user.is_authenticated:
+			return redirect('%s' % request.path)
 
 class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Reviews
@@ -82,6 +96,9 @@ class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	def test_func(self):
 		obj = self.get_object()
 		return obj.owner == self.request.user
+	def my_view(request):
+		if not requst.user.is_authenticated:
+			return redirect('%s' % request.path)
 
 
 class SearchReviewView(ListView):
