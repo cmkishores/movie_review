@@ -73,9 +73,6 @@ class AddReviewView(LoginRequiredMixin,CreateView):
 		form.instance.owner = self.request.user
 		return super().form_valid(form)
 
-	def my_view(request):
-		if not requst.user.is_authenticated:
-			return redirect('%s' % request.path)
 class EditReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Reviews
 	template_name = 'updatereview.html'
@@ -84,9 +81,6 @@ class EditReviewView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	def test_func(self):
 		obj = self.get_object()
 		return obj.owner == self.request.user
-	def my_view(request):
-		if not requst.user.is_authenticated:
-			return redirect('%s' % request.path)
 
 class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Reviews
@@ -96,10 +90,7 @@ class DeleteReviewView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	def test_func(self):
 		obj = self.get_object()
 		return obj.owner == self.request.user
-	def my_view(request):
-		if not requst.user.is_authenticated:
-			return redirect('%s' % request.path)
-
+	
 
 class SearchReviewView(ListView):
 	model = Reviews
